@@ -53,14 +53,23 @@ public class Gateway {
     private func authorize() throws -> Future<HTTPHeaders> {
         guard let root = root else { throw Abort(.internalServerError) }
         var headers = self.headers
-        var token: String
-        if let t = root.token, t.till > Date() {
-            token = t.value
-        } else {
-            token = try Token.generate(user: root.user, pass: root.password)
+//        var token: String
+//        if let t = root.token, t.till > Date() {
+//            token = t.value
+//        } else {
+//            token = try Token.generate(user: root.user, pass: root.password)
+//        }
+//        headers.add(name: .authorization, value: token)
+//        return container.eventLoop.newSucceededFuture(result: headers)        
+        if let token = root.token, token.till > Date() {
+            headers.add(name: HTTPHeaderName.authorization, value: token.value)
+            return container.eventLoop.newSucceededFuture(result: headers)
         }
-        headers.add(name: .authorization, value: token)
-        return container.eventLoop.newSucceededFuture(result: headers)
+        return try root.dev(on: container).token(user: root.user, password: root.password).map { response in
+            root.token = Token(value: response.header, till: Date(timeIntervalSinceNow: Token.age))
+            headers.add(name: HTTPHeaderName.authorization, value: response.header)
+            return headers
+        }
     }
     
     var headers: HTTPHeaders {
