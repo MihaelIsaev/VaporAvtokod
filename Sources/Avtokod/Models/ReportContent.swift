@@ -87,11 +87,9 @@ public struct ReportContent: Codable {
             public var name: Name
             public var id: String
         }
-        public var brand: Brand
         public struct RCType: Codable {
             public var name: String
         }
-        public var type: RCType
         public struct Body: Codable {
             public struct Color: Codable {
                 public var name, type: String
@@ -99,37 +97,31 @@ public struct ReportContent: Codable {
             public var color: Color
             public var number: String
         }
-        public var body: Body
-        public var year: Int
         public struct Engine: Codable {
             public struct Fuel: Codable {
                 public var type: String
             }
-            public var fuel: Fuel
-            public var volume: Int64
             public struct Power: Codable {
                 public var hp, kw: Double
             }
-            public var power: Power
-            public var number: String
             public struct Model: Codable {
                 public var name: String
             }
+            public var fuel: Fuel
+            public var volume: Int64
+            public var power: Power
+            public var number: String?
             public var model: Model
         }
-        public var engine: Engine
         public struct Weight: Codable {
             public var netto, max: Double
         }
-        public var weight: Weight
         public struct Drive: Codable {
             public var type: String
         }
-        public var drive: Drive
         public struct Wheel: Codable { //руль
             public var position: String
         }
-        public var wheel: Wheel
         public struct Model: Codable {
             public var id: String
             public struct Name: Codable {
@@ -137,6 +129,15 @@ public struct ReportContent: Codable {
             }
             public var name: Name
         }
+        
+        public var brand: Brand
+        public var type: RCType
+        public var body: Body
+        public var year: Int
+        public var engine: Engine
+        public var weight: Weight
+        public var drive: Drive
+        public var wheel: Wheel
         public var model: Model
     }
     public struct AdditionalInfo: Codable {
