@@ -111,7 +111,7 @@ public struct ReportContent: Codable {
             public var volume: Int64
             public var power: Power
             public var number: String?
-            public var model: Model
+            public var model: Model?
         }
         public struct Weight: Codable {
             public var netto, max: Double
