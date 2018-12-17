@@ -4,15 +4,16 @@ import Foundation
 public class Avtokod: Service {
     let baseURL = "https://b2bapi.avtocod.ru/b2b/api/v1/"
     
-    public let user, password: String
+    public let user, password, reportType: String
     let webhook: String?
     var token: Token?
     
     // MARK: Initialization
     
-    public init(user: String, password: String, webhook: String?) {
+    public init(user: String, password: String, reportType: String, webhook: String?) {
         self.user = user
         self.password = password
+        self.reportType = reportType.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         self.webhook = webhook
     }
     
