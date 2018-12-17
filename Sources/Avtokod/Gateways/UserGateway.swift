@@ -90,6 +90,9 @@ public class UserGateway: Gateway {
         return try request(to: "reports/_make", method: .POST, beforeSend: { request in
             try request.content.encode(payload, as: .json)
         }).flatMap { response in
+            if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
+                print("makeReport rawData: \(str)")
+            }
             return try response.content.decode(MakeReportResponse.self)
         }
     }
