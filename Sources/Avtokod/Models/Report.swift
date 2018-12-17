@@ -20,7 +20,7 @@ public struct Report: Content {
     public var progress_ok, progress_wait, progress_error: Int
     public struct State: Codable {
         public var sources: [Source]
-        public var content: ReportContent
     }
     public var state: State
+    public var content: ReportContent
 }
