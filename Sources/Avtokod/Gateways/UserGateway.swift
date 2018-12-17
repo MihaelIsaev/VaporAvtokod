@@ -52,6 +52,7 @@ public class UserGateway: Gateway {
     public typealias ReportResponse = AvtokodResponse<Report>
     
     public func report(_ uid: String) throws -> Future<ReportResponse> {
+        print("getReport started")
         return try request(to: "reports/" + uid + "?_detailed=true&_content=true", method: .GET).flatMap { response in
             print("getReport status: \(response.http.status.code)")
             if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
