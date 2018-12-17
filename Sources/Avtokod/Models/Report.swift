@@ -14,7 +14,7 @@ public struct Report: Content {
     public var updated_at, updated_by, active_from, active_to: String
     public struct Query: Codable {
         var type: ReportQueryType
-        var query: String
+        var body: String
     }
     public var query: Query
     public var progress_ok, progress_wait, progress_error: Int
