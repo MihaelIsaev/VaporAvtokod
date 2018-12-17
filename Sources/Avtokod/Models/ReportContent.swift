@@ -19,7 +19,7 @@ public struct ReportContent: Codable {
     public struct CarPrice: Codable {
         public var items: [CarPriceItem]
     }
-    public var car_price: CarPrice
+    public var car_price: CarPrice?
     public struct Fines: Codable {
         public var items: [Fine]
     }

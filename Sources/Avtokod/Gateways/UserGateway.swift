@@ -53,6 +53,7 @@ public class UserGateway: Gateway {
     
     public func report(_ uid: String) throws -> Future<ReportResponse> {
         return try request(to: "reports/" + uid + "?_detailed=true&_content=true", method: .GET).flatMap { response in
+            print("getReport status: \(response.http.status.code)")
             if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
                 print("getReport rawData: \(str)")
             }
