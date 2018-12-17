@@ -13,7 +13,7 @@ public struct Report: Content {
     public var uid, name, comment, tags, created_at, created_by: String
     public var updated_at, updated_by, active_from, active_to: String
     public struct Query: Codable {
-        var queryType: ReportQueryType
+        var type: ReportQueryType
         var query: String
     }
     public var query: Query
