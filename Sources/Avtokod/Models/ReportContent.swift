@@ -11,45 +11,35 @@ public struct ReportContent: Codable {
     public struct Identifiers: Codable {
         public var vehicle: Vehicle
     }
-    public var identifiers: Identifiers
     public struct RegistrationActions: Codable {
         public var items: [RegistrationAction]
     }
-    public var registration_actions: RegistrationActions
     public struct CarPrice: Codable {
         public var items: [CarPriceItem]
     }
-    public var car_price: CarPrice?
     public struct Fines: Codable {
         public var items: [Fine]
     }
-    public var fines: Fines?
     public struct Customs: Codable {
         public struct History: Codable {
             public var items: [CustomsHistoryItem]
         }
         public var history: History
     }
-    public var customs: Customs?
     public struct Pledges: Codable {}
-    public var pledges: Pledges
     public struct Insurance: Codable {
         public struct Osago: Codable {}
         public var osago: Osago
     }
-    public var insurance: Insurance?
     public struct Accidents: Codable {
         public struct History: Codable {}
         public var history: History
     }
-    public var accidents: Accidents?
     public struct Restrictions: Codable {
         public struct RegistrationActions: Codable {}
         public var registration_actions: RegistrationActions
     }
-    public var restrictions: Restrictions?
     public struct Stealings: Codable {}
-    public var stealings: Stealings?
     public struct Ownership: Codable {
         public struct History: Codable {
             public struct Ownership: Codable {
@@ -64,7 +54,6 @@ public struct ReportContent: Codable {
         }
         public var history: History
     }
-    public var ownership: Ownership?
     public struct Mileages: Codable {
         public struct MileageItem: Codable {
             public struct Date: Codable {
@@ -75,7 +64,6 @@ public struct ReportContent: Codable {
         }
         public var items: MileageItem
     }
-    public var mileages: Mileages?
     public struct DiagnosticCards: Codable {
         public struct Item: Codable {
             public struct Date: Codable {
@@ -90,9 +78,7 @@ public struct ReportContent: Codable {
         }
         public var items: [Item]
     }
-    public var diagnostic_cards: DiagnosticCards?
     public struct Utilizations: Codable {}
-    public var utilizations: Utilizations?
     public struct TechData: Codable {
         public struct Brand: Codable {
             public struct Name: Codable {
@@ -153,7 +139,6 @@ public struct ReportContent: Codable {
         }
         public var model: Model
     }
-    public var tech_data: TechData?
     public struct AdditionalInfo: Codable {
         public struct Vehicle: Codable {
             public struct Category: Codable {
@@ -175,7 +160,6 @@ public struct ReportContent: Codable {
         }
         public var vehicle: Vehicle
     }
-    public var additional_info: AdditionalInfo?
     public struct Calculate: Codable {
         public struct Osago: Codable {
             public struct Price: Codable {
@@ -191,5 +175,22 @@ public struct ReportContent: Codable {
         }
         public var osago: Osago?
     }
+    
+    public var identifiers: Identifiers
+    public var registration_actions: RegistrationActions
+    public var car_price: CarPrice?
+    public var fines: Fines?
+    public var customs: Customs?
+    public var pledges: Pledges?
+    public var insurance: Insurance?
+    public var accidents: Accidents?
+    public var restrictions: Restrictions?
+    public var stealings: Stealings?
+    public var ownership: Ownership?
+    public var mileages: Mileages?
+    public var diagnostic_cards: DiagnosticCards?
+    public var utilizations: Utilizations?
+    public var tech_data: TechData?
+    public var additional_info: AdditionalInfo?
     public var calculate: Calculate?
 }
