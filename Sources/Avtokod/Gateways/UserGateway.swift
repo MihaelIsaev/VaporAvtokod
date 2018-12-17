@@ -87,7 +87,7 @@ public class UserGateway: Gateway {
             options = MakeReportRequest.Options(force: nil, webhook: wh)
         }
         let payload = MakeReportRequest(queryType: type, query: value, options: options, reportUid: nil)
-        return try request(to: "reports/_make", method: .POST, beforeSend: { request in
+        return try request(to: "reports/default/_make", method: .POST, beforeSend: { request in
             try request.content.encode(payload, as: .json)
         }).flatMap { response in
             if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
