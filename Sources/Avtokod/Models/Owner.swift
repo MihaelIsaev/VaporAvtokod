@@ -8,5 +8,5 @@
 import Foundation
 
 public struct Owner: Codable {
-    public var type: OwnerType
+    public var type: String
 }

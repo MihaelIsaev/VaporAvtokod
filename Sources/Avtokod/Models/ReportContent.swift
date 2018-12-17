@@ -141,11 +141,7 @@ public struct ReportContent: Codable {
         }
         public var drive: Drive
         public struct Wheel: Codable { //руль
-            public enum Position: String, Codable {
-                case left = "LEFT"
-                case right = "RIGHT"
-            }
-            public var position: Position
+            public var position: String
         }
         public var wheel: Wheel
         public struct Model: Codable {

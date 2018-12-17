@@ -72,10 +72,10 @@ public class UserGateway: Gateway {
     }
     
     public struct MakeReportResponseData: Content {
-        var uid: String
-        var isnew: Bool
-        var process_request_uid: String
-        var suggest_get: String //Date: 2018-12-15T01:43:54.203Z
+        public var uid: String
+        public var isnew: Bool
+        public var process_request_uid: String
+        public var suggest_get: String //Date: 2018-12-15T01:43:54.203Z
     }
     
     public typealias MakeReportResponse = AvtokodResponse<MakeReportResponseData>
