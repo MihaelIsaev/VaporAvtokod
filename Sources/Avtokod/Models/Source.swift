@@ -9,11 +9,11 @@ import Foundation
 import Vapor
 
 public struct Source: Content {
-    public var _id: SourceType
-    public var state: SourceState
+    public var _id: String
+    public var state: String
     public struct Data: Codable {
         var from_cache: Bool
-        var real_status: SourceState
+        var real_status: String
     }
     public var data: Data
 }
