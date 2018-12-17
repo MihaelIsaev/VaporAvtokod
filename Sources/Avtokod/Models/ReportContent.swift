@@ -145,7 +145,6 @@ public struct ReportContent: Codable {
             public struct Category: Codable {
                 public var code: String
             }
-            public var category: Category
             public struct Date: Codable {
                 public var receive: String
             }
@@ -153,11 +152,12 @@ public struct ReportContent: Codable {
                 public var date: Date
                 public var number: String
             }
-            public var passport: Passport
             public struct Sts: Codable {
                 public var date: Date
             }
-            public var sts: Sts
+            public var category: Category?
+            public var passport: Passport?
+            public var sts: Sts?
         }
         public var vehicle: Vehicle
     }
