@@ -32,14 +32,23 @@ public struct ReportContent: Codable {
         public var osago: Osago
     }
     public struct Accidents: Codable {
-        public struct History: Codable {}
+        public struct History: Codable {
+            public struct HistoryItem: Codable {}
+            public var items: [HistoryItem]
+        }
         public var history: History
     }
     public struct Restrictions: Codable {
-        public struct RegistrationActions: Codable {}
+        public struct RegistrationActions: Codable {
+            public struct RegistrationActionItem: Codable {}
+            public var items: [RegistrationActionItem]
+        }
         public var registration_actions: RegistrationActions
     }
-    public struct Stealings: Codable {}
+    public struct Stealings: Codable {
+        public struct StealingItem: Codable {}
+        public var items: [StealingItem]
+    }
     public struct Ownership: Codable {
         public struct History: Codable {
             public struct Ownership: Codable {
