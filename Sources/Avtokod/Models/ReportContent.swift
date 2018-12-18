@@ -12,7 +12,7 @@ public struct ReportContent: Codable {
         public var vehicle: Vehicle
     }
     public struct RegistrationActions: Codable {
-        public var items: [RegistrationAction]
+        public var items: [RegistrationAction]?
     }
     public struct CarPrice: Codable {
         public var items: [CarPriceItem]
@@ -34,20 +34,20 @@ public struct ReportContent: Codable {
     public struct Accidents: Codable {
         public struct History: Codable {
             public struct HistoryItem: Codable {}
-            public var items: [HistoryItem]
+            public var items: [HistoryItem]?
         }
         public var history: History
     }
     public struct Restrictions: Codable {
         public struct RegistrationActions: Codable {
             public struct RegistrationActionItem: Codable {}
-            public var items: [RegistrationActionItem]
+            public var items: [RegistrationActionItem]?
         }
         public var registration_actions: RegistrationActions
     }
     public struct Stealings: Codable {
         public struct StealingItem: Codable {}
-        public var items: [StealingItem]
+        public var items: [StealingItem]?
     }
     public struct Ownership: Codable {
         public struct History: Codable {
