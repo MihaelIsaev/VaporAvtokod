@@ -108,7 +108,7 @@ public struct ReportContent: Codable {
                 public var name: String
             }
             public var fuel: Fuel
-            public var volume: Int64
+            public var volume: Double
             public var power: Power
             public var number: String?
             public var model: Model?
