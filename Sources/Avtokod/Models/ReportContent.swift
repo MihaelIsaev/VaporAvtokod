@@ -53,8 +53,8 @@ public struct ReportContent: Codable {
         public struct History: Codable {
             public struct Ownership: Codable {
                 public struct Date: Codable {
-                    var start: String
-                    var end: String?
+                    public var start: String
+                    public var end: String?
                 }
                 public var date: Date
                 public var owner: Owner
