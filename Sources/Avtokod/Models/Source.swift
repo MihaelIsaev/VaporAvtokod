@@ -15,5 +15,5 @@ public struct Source: Content {
         var from_cache: Bool
         var real_status: String
     }
-    public var data: Data
+    public var data: Data?
 }
