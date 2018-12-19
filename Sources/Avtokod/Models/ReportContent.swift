@@ -9,7 +9,7 @@ import Foundation
 
 public struct ReportContent: Codable {
     public struct Identifiers: Codable {
-        public var vehicle: Vehicle
+        public var vehicle: Vehicle?
     }
     public struct RegistrationActions: Codable {
         public var items: [RegistrationAction]?
@@ -186,8 +186,8 @@ public struct ReportContent: Codable {
         public var osago: Osago?
     }
     
-    public var identifiers: Identifiers
-    public var registration_actions: RegistrationActions
+    public var identifiers: Identifiers?
+    public var registration_actions: RegistrationActions?
     public var car_price: CarPrice?
     public var fines: Fines?
     public var customs: Customs?

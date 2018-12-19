@@ -8,5 +8,5 @@
 import Foundation
 
 public struct Vehicle: Codable {
-    public var vin, reg_num, sts: String
+    public var vin, reg_num, sts: String?
 }
