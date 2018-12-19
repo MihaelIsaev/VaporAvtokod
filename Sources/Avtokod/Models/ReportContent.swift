@@ -33,14 +33,52 @@ public struct ReportContent: Codable {
     }
     public struct Accidents: Codable {
         public struct History: Codable {
-            public struct HistoryItem: Codable {}
+            public struct HistoryItem: Codable {
+                public struct Accident: Codable {
+                    public var date: String
+                }
+                public struct Damage: Codable {
+                    public var points: [Int]?
+                }
+                public struct Geo: Codable {
+                    public var region: String?
+                }
+                public var number: String?
+                public var accident: Accident?
+                public var type: String?
+                
+                public var damage: Damage?
+                public var geo: Geo?
+            }
             public var items: [HistoryItem]?
         }
         public var history: History
     }
     public struct Restrictions: Codable {
         public struct RegistrationActions: Codable {
-            public struct RegistrationActionItem: Codable {}
+            public struct RegistrationActionItem: Codable {
+                public struct Vehicle: Codable {
+                    public struct Model: Codable {
+                        public var name: String?
+                    }
+                    public var year: Int?
+                    public var model: Model?
+                }
+                public struct Initiator: Codable {
+                    public struct Region: Codable {
+                        public var name: String?
+                    }
+                    public var name: String?
+                    public var region: Region?
+                }
+                public struct Restrict: Codable {
+                    public var type: String?
+                    public var reason: String?
+                }
+                public var vehicle: Vehicle?
+                public var initiator: Initiator?
+                public var restrict: Restrict?
+            }
             public var items: [RegistrationActionItem]?
         }
         public var registration_actions: RegistrationActions
