@@ -91,84 +91,84 @@ public struct ReportContent: Codable {
     public struct TechData: Codable {
         public struct Brand: Codable {
             public struct Name: Codable {
-                public var original, normalized: String
+                public var original, normalized: String?
             }
-            public var name: Name
-            public var id: String
+            public var name: Name?
+            public var id: String?
         }
         public struct RCType: Codable {
-            public var name: String
+            public var name: String?
         }
         public struct Body: Codable {
             public struct Color: Codable {
-                public var name, type: String
+                public var name, type: String?
             }
-            public var color: Color
-            public var number: String
+            public var color: Color?
+            public var number: String?
         }
         public struct Engine: Codable {
             public struct Fuel: Codable {
-                public var type: String
+                public var type: String?
             }
             public struct Power: Codable {
-                public var hp, kw: Double
+                public var hp, kw: Double?
             }
             public struct Model: Codable {
-                public var name: String
+                public var name: String?
             }
-            public var fuel: Fuel
-            public var volume: Double
-            public var power: Power
+            public var fuel: Fuel?
+            public var volume: Double?
+            public var power: Power?
             public var number: String?
             public var model: Model?
         }
         public struct Weight: Codable {
-            public var netto, max: Double
+            public var netto, max: Double?
         }
         public struct Drive: Codable {
-            public var type: String
+            public var type: String?
         }
         public struct Wheel: Codable { //руль
-            public var position: String
+            public var position: String?
         }
         public struct Model: Codable {
-            public var id: String
+            public var id: String?
             public struct Name: Codable {
-                public var normalized, original: String
+                public var normalized, original: String?
             }
-            public var name: Name
+            public var name: Name?
         }
         
-        public var brand: Brand
-        public var type: RCType
-        public var body: Body
-        public var year: Int
-        public var engine: Engine
-        public var weight: Weight
-        public var drive: Drive
-        public var wheel: Wheel
-        public var model: Model
+        public var brand: Brand?
+        public var type: RCType?
+        public var body: Body?
+        public var year: Int?
+        public var engine: Engine?
+        public var weight: Weight?
+        public var drive: Drive?
+        public var wheel: Wheel?
+        public var model: Model?
     }
     public struct AdditionalInfo: Codable {
         public struct Vehicle: Codable {
             public struct Category: Codable {
-                public var code: String
+                public var code: String?
             }
             public struct Date: Codable {
-                public var receive: String
+                public var receive: String?
             }
             public struct Passport: Codable {
-                public var date: Date
-                public var number: String
+                public var date: Date?
+                public var number: String?
             }
             public struct Sts: Codable {
-                public var date: Date
+                public var date: Date?
             }
             public var category: Category?
             public var passport: Passport?
             public var sts: Sts?
         }
-        public var vehicle: Vehicle
+        public var vehicle: Vehicle?
     }
     public struct Calculate: Codable {
         public struct Osago: Codable {
