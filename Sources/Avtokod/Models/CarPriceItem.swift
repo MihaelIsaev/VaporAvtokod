@@ -8,18 +8,18 @@
 import Foundation
 
 public struct CarPriceItem: Codable {
-    public var amount: Int64
     public struct Model: Codable {
-        public var name: String
+        public var name: String?
     }
-    public var model: Model
     public struct Modification: Codable {
-        public var name: String
+        public var name: String?
     }
-    public var modification: Modification
     public struct Engine: Codable {
-        public var colume: Int64
+        public var volume: Int64?
     }
-    public var engine: Engine
-    public var year: Int64
+    public var amount: Int64?
+    public var model: Model?
+    public var modification: Modification?
+    public var engine: Engine?
+    public var year: Int64?
 }

@@ -15,10 +15,10 @@ public struct ReportContent: Codable {
         public var items: [RegistrationAction]?
     }
     public struct CarPrice: Codable {
-        public var items: [CarPriceItem]
+        public var items: [CarPriceItem]?
     }
     public struct Fines: Codable {
-        public var items: [Fine]
+        public var items: [Fine]?
     }
     public struct Customs: Codable {
         public struct History: Codable {
