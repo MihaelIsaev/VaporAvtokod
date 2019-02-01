@@ -8,5 +8,5 @@
 import Foundation
 
 public enum SourceState: String, Codable {
-    case OK, PROGRESS
+    case OK, PROGRESS, ERROR, CANCEL
 }

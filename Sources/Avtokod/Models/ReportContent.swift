@@ -12,7 +12,7 @@ public struct ReportContent: Codable {
         public var vehicle: Vehicle?
     }
     public struct RegistrationActions: Codable {
-        public var items: [RegistrationAction]?
+//        public var items: [RegistrationAction]? //TODO: uncomment
     }
     public struct CarPrice: Codable {
         public var items: [CarPriceItem]?
@@ -121,7 +121,7 @@ public struct ReportContent: Codable {
                 public var number, type: String
             }
             public var doc: Doc
-            public var reg_num: String
+            public var reg_num: String?
         }
         public var items: [Item]
     }
