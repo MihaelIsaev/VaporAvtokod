@@ -52,12 +52,12 @@ public class UserGateway: Gateway {
     public typealias ReportResponse = AvtokodResponse<Report>
     
     public func report(_ uid: String) throws -> Future<ReportResponse> {
-        print("getReport started")
+//        print("getReport started")
         return try request(to: "reports/" + uid + "?_detailed=true&_content=true", method: .GET).flatMap { response in
-            print("getReport status: \(response.http.status.code)")
-            if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
-                print("getReport rawData: \(str)")
-            }
+//            print("getReport status: \(response.http.status.code)")
+//            if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
+//                print("getReport rawData: \(str)")
+//            }
             return try response.content.decode(ReportResponse.self)
         }
     }
@@ -95,9 +95,9 @@ public class UserGateway: Gateway {
         return try request(to: "reports/\(root?.reportType ?? "")/_make", method: .POST, beforeSend: { request in
             try request.content.encode(payload, as: .json)
         }).flatMap { response in
-            if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
-                print("makeReport rawData: \(str)")
-            }
+//            if let rawData = response.http.body.data, let str = String(data: rawData, encoding: .utf8) {
+//                print("makeReport rawData: \(str)")
+//            }
             return try response.content.decode(MakeReportResponse.self)
         }
     }
